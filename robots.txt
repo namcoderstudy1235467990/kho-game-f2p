@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://khogamef2p.pages.dev/sitemap.xml
