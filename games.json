@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "ngon-den-rung-suong",
+    "title": "Ngọn Đèn Rừng Sương",
+    "genre": "Nhập vai · Phiêu lưu",
+    "desc": "Lam rời Làng Đom Đóm đi tìm ba mảnh Tàn Lửa và người thầy mất tích. Chiến đấu, lên cấp và đối đầu Cóc Chúa trong Đền Sương.",
+    "url": "games/ngon-den-rung-suong/",
+    "cover": "games/ngon-den-rung-suong/cover.png",
+    "controls": "WASD di chuyển · J / chuột trái đánh · Shift lướt · E nói chuyện",
+    "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)"
+  },
+  {
+    "slug": "sieu-tan-tinh",
+    "title": "Siêu Tân Tinh",
+    "genre": "Game trình duyệt",
+    "desc": "Game trình duyệt đầu tay của Nam, chạy ngay trên web.",
+    "url": "https://sieutantinh.pages.dev",
+    "cover": "",
+    "controls": "",
+    "credit": ""
+  }
+]
