@@ -1,5 +1,18 @@
 [
  {
+  "slug": "hiep-si-ham-nguc",
+  "title": "Hiệp Sĩ Hầm Ngục",
+  "genre": "3D · Hành động nhập vai",
+  "desc": "Chọn Hiệp Sĩ, Chiến Binh hoặc Pháp Sư, chém quái xương qua 10 căn phòng, lên cấp chọn sức mạnh mới và hạ gục Vua Xương.",
+  "url": "games/hiep-si-ham-nguc/",
+  "cover": "games/hiep-si-ham-nguc/cover.png",
+  "controls": "WASD chạy · J/chuột trái đánh · Space lăn né · L/chuột phải tuyệt kỹ · Có nút cảm ứng",
+  "credit": "Mô hình 3D: KayKit – Kay Lousberg (CC0); âm thanh: Kenney (CC0) — xem games/hiep-si-ham-nguc/credits.html",
+  "about": "Hiệp Sĩ Hầm Ngục là game hành động nhập vai 3D chơi miễn phí trên trình duyệt. Chọn một trong ba người hùng (Hiệp Sĩ, Chiến Binh, Pháp Sư), chiến đấu với đội quân xương khô qua 10 căn phòng hầm ngục, đánh combo, lăn né và dùng tuyệt kỹ. Hạ quái để nhận kinh nghiệm, lên cấp và chọn sức mạnh mới như hút máu, chí mạng, tốc đánh. Đánh bại Đội Trưởng Xương và Vua Xương để chiến thắng. Tiến độ được tự lưu.",
+  "keywords": "game 3d đánh quái, game nhập vai 3d, game hành động 3d, game lên cấp, game chặt chém, game online miễn phí",
+  "genre_en": "Action RPG"
+ },
+ {
   "slug": "robot-nhay-may",
   "title": "Rô-bốt Nhảy Mây",
   "genre": "3D · Phiêu lưu nhảy đảo",
