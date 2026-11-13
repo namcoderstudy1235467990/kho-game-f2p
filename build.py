@@ -88,10 +88,10 @@ page = (page.replace('{{CARDS}}', '\n'.join(cards)).replace('{{CREDITS}}', credi
 open(os.path.join(ROOT, 'index.html'), 'w', encoding='utf-8').write(page)
 
 # ---------- sơ đồ trang ----------
-urls = [SITE + '/'] + [absu(g['url']) for g in games if not g['url'].startswith('http')] + [SITE + '/gioi-thieu.html', SITE + '/chinh-sach-bao-mat.html']
+urls = [SITE + '/'] + [absu(g['url']) for g in games if not g['url'].startswith('http')] + [SITE + '/gioi-thieu', SITE + '/chinh-sach-bao-mat']
 for g in games:
     if not g['url'].startswith('http') and os.path.exists(os.path.join(ROOT, g['url'], 'credits.html')):
-        urls.append(absu(g['url']) + 'credits.html')
+        urls.append(absu(g['url']) + 'credits')
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sm += [f'  <url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>' for u in urls]
 sm.append('</urlset>')
