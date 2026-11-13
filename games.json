@@ -1,5 +1,18 @@
 [
  {
+  "slug": "huyen-thoai-rung-xanh",
+  "title": "Huyền Thoại Rừng Xanh",
+  "genre": "3D · Nhập vai thế giới mở",
+  "desc": "Tự tạo nhân vật nam/nữ, khám phá khu rừng 3D, làm nhiệm vụ cho Già Làng, đánh sói, orc và hạ gục Rồng Lửa trên đỉnh núi.",
+  "url": "games/huyen-thoai-rung-xanh/",
+  "cover": "games/huyen-thoai-rung-xanh/cover.png",
+  "controls": "WASD chạy · Chuột trái đánh · Chuột phải kéo xoay camera · Space lăn · F đỡ · L tuyệt kỹ · H bình máu · E nói chuyện",
+  "credit": "Nhân vật & hoạt ảnh: Quaternius (CC0); cảnh vật & âm thanh: Kenney (CC0) — xem games/huyen-thoai-rung-xanh/credits.html",
+  "about": "Huyền Thoại Rừng Xanh là game nhập vai hành động 3D thế giới mở chơi miễn phí trên trình duyệt. Bạn tự tạo người hùng nam hoặc nữ (chọn kiểu tóc, màu tóc, màu trang phục), khám phá khu rừng quanh làng Thanh Mộc, nhận nhiệm vụ từ Già Làng, chiến đấu bằng combo kiếm, lăn né, đỡ đòn và tuyệt kỹ. Lên cấp, nhận đại kiếm, áo kiểm lâm, khiên hiệp sĩ, rồi đánh bại Tù Trưởng Orc và Rồng Lửa. Tiến độ được tự lưu.",
+  "keywords": "game 3d thế giới mở, game nhập vai 3d, game tạo nhân vật, game đánh rồng, game hành động 3d, game online miễn phí",
+  "genre_en": "Open-world Action RPG"
+ },
+ {
   "slug": "hiep-si-ham-nguc",
   "title": "Hiệp Sĩ Hầm Ngục",
   "genre": "3D · Hành động nhập vai",
