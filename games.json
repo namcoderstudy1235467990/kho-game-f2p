@@ -1,41 +1,54 @@
 [
-  {
-    "slug": "ngon-den-rung-suong",
-    "title": "Ngọn Đèn Rừng Sương",
-    "genre": "Nhập vai · Phiêu lưu",
-    "desc": "Lam rời Làng Đom Đóm đi tìm ba mảnh Tàn Lửa và người thầy mất tích. Chiến đấu, lên cấp và đối đầu Cóc Chúa trong Đền Sương.",
-    "url": "games/ngon-den-rung-suong/",
-    "cover": "games/ngon-den-rung-suong/cover.png",
-    "controls": "WASD di chuyển · J / chuột trái đánh · Shift lướt · E nói chuyện",
-    "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)",
-    "about": "Ngọn Đèn Rừng Sương là game nhập vai hành động phiêu lưu có cốt truyện, chơi miễn phí ngay trên trình duyệt. Bạn vào vai Lam, rời Làng Đom Đóm băng qua Rừng Thì Thầm và Phế Tích Nguyệt Thạch để tìm ba mảnh Tàn Lửa, lên cấp, rèn kiếm và đánh bại các trùm. Game có đồ họa pixel, ánh sáng đèn đuốc, sương mù và chơi được cả trên điện thoại.",
-    "keywords": "game nhập vai, game phiêu lưu, game hành động, game pixel, game RPG online",
-    "genre_en": "Action RPG"
-  },
-  {
-    "slug": "linh-thu-ky",
-    "title": "Linh Thú Ký",
-    "genre": "Nhập vai · Theo lượt",
-    "desc": "Thu phục 36 loài linh thú, luyện cấp, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng.",
-    "url": "games/linh-thu-ky/",
-    "cover": "games/linh-thu-ky/cover.png",
-    "controls": "WASD di chuyển · E nói chuyện, chọn · Q đội hình · Esc quay lại",
-    "credit": "Hình ảnh: dự án Tuxemon (CC BY-SA 4.0 / CC BY / CC0) — xem games/linh-thu-ky/credits.html",
-    "about": "Linh Thú Ký là game nhập vai đánh theo lượt kiểu thu phục quái vật, chơi miễn phí trên trình duyệt. Chọn linh thú khởi đầu, vào bãi cỏ rậm gặp linh thú hoang dã, làm yếu rồi thu phục chúng. Có 36 loài, 7 hệ khắc chế nhau, lên cấp, học chiêu, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng. Tiến độ được tự lưu.",
-    "keywords": "game đánh theo lượt, game thu phục quái vật, game giống pokemon, game nhập vai, game online miễn phí",
-    "genre_en": "Turn-based RPG"
-  },
-  {
-    "slug": "sieu-tan-tinh",
-    "title": "Siêu Tân Tinh",
-    "genre": "Game trình duyệt",
-    "desc": "Game trình duyệt đầu tay của Nam, chạy ngay trên web.",
-    "url": "https://sieutantinh.pages.dev",
-    "cover": "",
-    "controls": "",
-    "credit": "",
-    "about": "Siêu Tân Tinh là game trình duyệt đầu tay của Nam, chơi miễn phí ngay trên web, không cần cài đặt.",
-    "keywords": "game trình duyệt, game online miễn phí",
-    "genre_en": "Casual"
-  }
+ {
+  "slug": "robot-nhay-may",
+  "title": "Rô-bốt Nhảy Mây",
+  "genre": "3D · Phiêu lưu nhảy đảo",
+  "desc": "Điều khiển chú rô-bốt nhảy qua các đảo trên mây, nhặt xu vàng, đạp quái bay và về tới lá cờ. 6 màn, hợp với các bạn nhỏ.",
+  "url": "games/robot-nhay-may/",
+  "cover": "games/robot-nhay-may/cover.png",
+  "controls": "Mũi tên/WASD chạy · Space nhảy (2 lần = nhảy đôi) · Q/E xoay camera · Có nút cảm ứng trên điện thoại",
+  "credit": "Mô hình 3D & âm thanh: Kenney (CC0) — xem games/robot-nhay-may/credits.html",
+  "about": "Rô-bốt Nhảy Mây là game phiêu lưu 3D chơi miễn phí trên trình duyệt, dễ chơi cho trẻ em. Bạn điều khiển chú rô-bốt nhỏ chạy, nhảy và nhảy đôi qua 6 màn trên các hòn đảo mây: bục di chuyển, bục rơi, mây đệm nhún, khối gạch có xu và rô-bốt bay tuần tra. Nhặt hết xu và về đích thật nhanh để giành đủ 3 sao. Chơi được trên máy tính và điện thoại, tiến độ được tự lưu.",
+  "keywords": "game 3d, game 3d online, game nhảy, game cho trẻ em, game phiêu lưu 3d, game online miễn phí",
+  "genre_en": "3D Platformer"
+ },
+ {
+  "slug": "ngon-den-rung-suong",
+  "title": "Ngọn Đèn Rừng Sương",
+  "genre": "Nhập vai · Phiêu lưu",
+  "desc": "Lam rời Làng Đom Đóm đi tìm ba mảnh Tàn Lửa và người thầy mất tích. Chiến đấu, lên cấp và đối đầu Cóc Chúa trong Đền Sương.",
+  "url": "games/ngon-den-rung-suong/",
+  "cover": "games/ngon-den-rung-suong/cover.png",
+  "controls": "WASD di chuyển · J / chuột trái đánh · Shift lướt · E nói chuyện",
+  "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)",
+  "about": "Ngọn Đèn Rừng Sương là game nhập vai hành động phiêu lưu có cốt truyện, chơi miễn phí ngay trên trình duyệt. Bạn vào vai Lam, rời Làng Đom Đóm băng qua Rừng Thì Thầm và Phế Tích Nguyệt Thạch để tìm ba mảnh Tàn Lửa, lên cấp, rèn kiếm và đánh bại các trùm. Game có đồ họa pixel, ánh sáng đèn đuốc, sương mù và chơi được cả trên điện thoại.",
+  "keywords": "game nhập vai, game phiêu lưu, game hành động, game pixel, game RPG online",
+  "genre_en": "Action RPG"
+ },
+ {
+  "slug": "linh-thu-ky",
+  "title": "Linh Thú Ký",
+  "genre": "Nhập vai · Theo lượt",
+  "desc": "Thu phục 36 loài linh thú, luyện cấp, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng.",
+  "url": "games/linh-thu-ky/",
+  "cover": "games/linh-thu-ky/cover.png",
+  "controls": "WASD di chuyển · E nói chuyện, chọn · Q đội hình · Esc quay lại",
+  "credit": "Hình ảnh: dự án Tuxemon (CC BY-SA 4.0 / CC BY / CC0) — xem games/linh-thu-ky/credits.html",
+  "about": "Linh Thú Ký là game nhập vai đánh theo lượt kiểu thu phục quái vật, chơi miễn phí trên trình duyệt. Chọn linh thú khởi đầu, vào bãi cỏ rậm gặp linh thú hoang dã, làm yếu rồi thu phục chúng. Có 36 loài, 7 hệ khắc chế nhau, lên cấp, học chiêu, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng. Tiến độ được tự lưu.",
+  "keywords": "game đánh theo lượt, game thu phục quái vật, game giống pokemon, game nhập vai, game online miễn phí",
+  "genre_en": "Turn-based RPG"
+ },
+ {
+  "slug": "sieu-tan-tinh",
+  "title": "Siêu Tân Tinh",
+  "genre": "Game trình duyệt",
+  "desc": "Game trình duyệt đầu tay của Nam, chạy ngay trên web.",
+  "url": "https://sieutantinh.pages.dev",
+  "cover": "",
+  "controls": "",
+  "credit": "",
+  "about": "Siêu Tân Tinh là game trình duyệt đầu tay của Nam, chơi miễn phí ngay trên web, không cần cài đặt.",
+  "keywords": "game trình duyệt, game online miễn phí",
+  "genre_en": "Casual"
+ }
 ]
