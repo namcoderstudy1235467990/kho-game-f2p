@@ -10,6 +10,16 @@
     "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)"
   },
   {
+    "slug": "linh-thu-ky",
+    "title": "Linh Thú Ký",
+    "genre": "Nhập vai · Theo lượt",
+    "desc": "Thu phục 36 loài linh thú, luyện cấp, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng.",
+    "url": "games/linh-thu-ky/",
+    "cover": "games/linh-thu-ky/cover.png",
+    "controls": "WASD di chuyển · E nói chuyện, chọn · Q đội hình · Esc quay lại",
+    "credit": "Hình ảnh: dự án Tuxemon (CC BY-SA 4.0 / CC BY / CC0) — xem games/linh-thu-ky/credits.html"
+  },
+  {
     "slug": "sieu-tan-tinh",
     "title": "Siêu Tân Tinh",
     "genre": "Game trình duyệt",

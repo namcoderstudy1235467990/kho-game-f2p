@@ -15,3 +15,4 @@ Cloudflare Pages: kết nối repo này, Build command để trống, Output dir
 
 ## Bản quyền hình ảnh
 - Ngọn Đèn Rừng Sương: Ninja Adventure Asset Pack — Pixel-boy & AAA, giấy phép CC0.
+- Linh Thú Ký: hình ảnh từ dự án Tuxemon và cộng đồng (CC BY-SA 4.0 / CC BY / CC0), danh sách tác giả tại `games/linh-thu-ky/credits.html`.
