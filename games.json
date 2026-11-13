@@ -1,5 +1,18 @@
 [
  {
+  "slug": "ca-vien-chien",
+  "title": "Xe Cá Viên Chiên Cô Ba",
+  "genre": "3D · Bán hàng, nấu ăn",
+  "desc": "Đứng quầy cá viên chiên giữa phố Sài Gòn: chiên vàng giòn, rưới đúng tương, giao nhanh cho khách để kiếm tiền và nâng cấp xe hàng.",
+  "url": "games/ca-vien-chien/",
+  "cover": "games/ca-vien-chien/cover.png",
+  "controls": "Chỉ cần bấm/chạm: đĩa đồ sống → chảo dầu → ly → tương → bấm bong bóng của khách để giao",
+  "credit": "Người 3D: Microsoft Rocketbox (MIT); đồ ăn & đường phố: Kenney (CC0) — xem games/ca-vien-chien/credits.html",
+  "about": "Xe Cá Viên Chiên Cô Ba là game 3D mô phỏng bán hàng và nấu ăn, chơi miễn phí trên trình duyệt. Khách hàng 3D tả thực đi trên phố đến gọi món: cá viên, bò viên, xúc xích, xiên rau củ với tương ớt hoặc tương đen. Bạn thả xiên vào chảo dầu, canh lúc vàng giòn, bỏ vào ly, rưới tương và giao thật nhanh để nhận tiền và tip. Đạt mục tiêu mỗi ngày để mở món mới và nâng cấp xe hàng: thêm chỗ chiên, lửa to, quạt mát, bảng hiệu đèn LED. Tiến độ được tự lưu.",
+  "keywords": "game bán hàng, game nấu ăn 3d, game cá viên chiên, game bán đồ ăn, game quản lý cửa hàng, game online miễn phí",
+  "genre_en": "Cooking Simulation"
+ },
+ {
   "slug": "huyen-thoai-rung-xanh",
   "title": "Huyền Thoại Rừng Xanh",
   "genre": "3D · Nhập vai thế giới mở",

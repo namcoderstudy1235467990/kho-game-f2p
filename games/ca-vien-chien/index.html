@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Xe Cá Viên Chiên Cô Ba — 3D, Bán hàng, nấu ăn chơi miễn phí | Kho Game F2P</title>
+<!--SEO-->
+<meta name="description" content="Xe Cá Viên Chiên Cô Ba là game 3D mô phỏng bán hàng và nấu ăn, chơi miễn phí trên trình duyệt. Khách hàng 3D tả thực đi trên phố đến gọi món: cá viên, bò viên, xúc xích, xiên rau củ với tương ớt hoặc tương đen. Bạn thả xiên vào chảo dầu, canh lúc vàng giòn, bỏ vào ly, rưới tương và giao thật nhanh đ">
+<meta name="keywords" content="game bán hàng, game nấu ăn 3d, game cá viên chiên, game bán đồ ăn, game quản lý cửa hàng, game online miễn phí, kho game, game online miễn phí">
+<link rel="canonical" href="https://khogamef2p.pages.dev/games/ca-vien-chien/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kho Game F2P">
+<meta property="og:title" content="Xe Cá Viên Chiên Cô Ba — chơi miễn phí trên trình duyệt">
+<meta property="og:description" content="Xe Cá Viên Chiên Cô Ba là game 3D mô phỏng bán hàng và nấu ăn, chơi miễn phí trên trình duyệt. Khách hàng 3D tả thực đi trên phố đến gọi món: cá viên, bò viên, xúc xích, xiên rau củ với tương ớt hoặc tương đen. Bạn thả xiên vào chảo dầu, canh lúc vàng giòn, bỏ vào ly, rưới tương và giao thật nhanh đ">
+<meta property="og:url" content="https://khogamef2p.pages.dev/games/ca-vien-chien/">
+<meta property="og:image" content="https://khogamef2p.pages.dev/games/ca-vien-chien/cover.png"><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Xe Cá Viên Chiên Cô Ba", "url": "https://khogamef2p.pages.dev/games/ca-vien-chien/", "description": "Xe Cá Viên Chiên Cô Ba là game 3D mô phỏng bán hàng và nấu ăn, chơi miễn phí trên trình duyệt. Khách hàng 3D tả thực đi trên phố đến gọi món: cá viên, bò viên, xúc xích, xiên rau củ với tương ớt hoặc tương đen. Bạn thả xiên vào chảo dầu, canh lúc vàng giòn, bỏ vào ly, rưới tương và giao thật nhanh để nhận tiền và tip. Đạt mục tiêu mỗi ngày để mở món mới và nâng cấp xe hàng: thêm chỗ chiên, lửa to, quạt mát, bảng hiệu đèn LED. Tiến độ được tự lưu.", "genre": "Cooking Simulation", "inLanguage": "vi", "gamePlatform": "Web browser", "applicationCategory": "Game", "operatingSystem": "Any", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"}, "author": {"@type": "Person", "name": "Phạm Vũ Hoài Nam"}, "publisher": {"@type": "Organization", "name": "Kho Game F2P", "url": "https://khogamef2p.pages.dev/"}, "image": "https://khogamef2p.pages.dev/games/ca-vien-chien/cover.png"}</script>
+<!--/SEO-->
+<meta name="theme-color" content="#3a2340">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#1b1220;font-family:"Segoe UI",system-ui,sans-serif;color:#fff;user-select:none;-webkit-user-select:none;touch-action:none}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.top{position:fixed;top:max(8px,env(safe-area-inset-top));left:10px;right:10px;display:none;gap:8px;align-items:center;pointer-events:none;flex-wrap:wrap}
+.playing .top{display:flex}
+.chip{background:rgba(30,16,36,.78);border:2px solid #ffcf6b;border-radius:999px;padding:5px 14px;font-weight:800;font-size:16px;white-space:nowrap}
+.chip small{font-weight:600;opacity:.85;font-size:12px}
+.sp{flex:1}
+.ib{pointer-events:auto;width:42px;height:42px;border-radius:50%;border:2px solid #ffcf6b;background:#5a2d4a;color:#ffe9b0;font-weight:900;font-size:17px;cursor:pointer}
+.goal{position:relative;width:150px;height:14px;border-radius:7px;background:rgba(0,0,0,.5);overflow:hidden;border:1px solid #000;display:inline-block;vertical-align:middle;margin-left:6px}
+.goal i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#6bd16b,#ffd34d)}
+.bub{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;cursor:pointer;background:#fff;color:#3a2340;border-radius:14px;padding:6px 10px 7px;font-weight:800;font-size:14px;line-height:1.35;box-shadow:0 4px 0 rgba(0,0,0,.25);text-align:center;min-width:96px;border:3px solid #fff;transition:border-color .15s,transform .1s}
+.bub:after{content:"";position:absolute;left:50%;bottom:-10px;margin-left:-8px;border:8px solid transparent;border-top-color:#fff;border-bottom:0}
+.bub .pt{height:6px;border-radius:3px;background:#eee;margin-top:4px;overflow:hidden}
+.bub .pt i{display:block;height:100%;background:#4cc35a}
+.bub .giao{display:block;margin-top:4px;font-size:12px;color:#fff;background:#e2463a;border-radius:8px;padding:2px 6px}
+.bub.ready{border-color:#ffd34d;transform:translate(-50%,-100%) scale(1.06)}
+.bub .em{font-size:18px}
+.pop{position:absolute;transform:translate(-50%,-50%);font-weight:900;font-size:22px;text-shadow:0 2px 0 #000,0 0 8px #000;white-space:nowrap;pointer-events:none}
+.lab{position:absolute;transform:translate(-50%,-50%);font-weight:800;font-size:12px;background:rgba(20,10,25,.72);border-radius:8px;padding:2px 7px;white-space:nowrap;pointer-events:none;border:1px solid rgba(255,207,107,.6)}
+.tbar{position:absolute;transform:translate(-50%,-50%);width:46px;height:7px;border-radius:4px;background:rgba(0,0,0,.6);overflow:hidden;pointer-events:none;border:1px solid #000}
+.tbar i{display:block;height:100%}
+.hint{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(30,16,36,.82);border:1px solid #ffcf6b;border-radius:12px;padding:7px 14px;font-weight:700;font-size:14px;display:none;text-align:center;max-width:94vw;pointer-events:none}
+.playing .hint{display:block}
+.toast{position:fixed;left:50%;top:64px;transform:translateX(-50%);background:rgba(30,16,36,.9);border:2px solid #ffcf6b;color:#fff1cc;font-weight:800;font-size:17px;padding:9px 16px;border-radius:12px;opacity:0;transition:opacity .3s;text-align:center;max-width:92vw;pointer-events:none;z-index:6}
+.toast.on{opacity:1}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;pointer-events:auto;z-index:5;padding:14px;overflow:auto}
+.screen.on{display:flex}
+#sMenu{background:linear-gradient(90deg,rgba(20,8,24,.0) 30%,rgba(20,8,24,.82) 58%);align-items:flex-end}
+.panel{width:min(440px,100%);padding:6px 10px}
+h1{margin:0;font-family:"Trebuchet MS",sans-serif;font-size:clamp(34px,6vw,54px);line-height:1.05;color:#ffd34d;text-shadow:0 4px 0 #b3361f,0 8px 22px rgba(0,0,0,.5)}
+.sub{color:#fbe6d0;margin:8px 0 14px;line-height:1.5;font-size:15px}
+.card{background:linear-gradient(#4a2645,#2c1630);border:2px solid #ffcf6b;border-radius:18px;padding:16px 20px;max-width:560px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.card h2{margin:0 0 8px;color:#ffd34d}
+.tx{line-height:1.65;font-size:15.5px}
+.tx b{color:#ffd34d}
+.big{pointer-events:auto;border:none;border-radius:14px;background:linear-gradient(#ffe27a,#f2a531);color:#5a2205;font-weight:900;font-size:19px;padding:12px 22px;margin:10px 6px 0 0;cursor:pointer;box-shadow:0 4px 0 #9a5410;font-family:inherit}
+.big.alt{background:linear-gradient(#bfe9c6,#62b876);color:#0e3a1a;box-shadow:0 4px 0 #2d6a3e}
+.big.gray{background:linear-gradient(#efe4da,#b2a296);color:#33261c;box-shadow:0 4px 0 #6a5c50}
+.help{font-size:13px;color:#ead6c6;line-height:1.55;margin-top:12px}
+.credit{font-size:12px;color:#cbb7a8;margin-top:10px}.credit a{color:#ffd34d}
+.shop{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;text-align:left}
+.it{border:2px solid rgba(255,207,107,.5);border-radius:12px;padding:9px 10px;background:rgba(0,0,0,.25)}
+.it b{color:#ffd34d}.it small{display:block;font-size:12.5px;opacity:.9;margin:2px 0 6px}
+.it button{pointer-events:auto;border:none;border-radius:9px;background:#f2a531;color:#4a1d05;font-weight:900;padding:6px 10px;cursor:pointer;font-family:inherit}
+.it button:disabled{background:#776a62;color:#ccc;cursor:not-allowed}
+.stars{font-size:30px;color:#ffd34d;letter-spacing:4px}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#1b1220;z-index:20;font-weight:800;font-size:19px;color:#ffd34d}
+#loading .bb{width:240px;height:12px;border-radius:6px;background:rgba(255,255,255,.15);margin-top:12px;overflow:hidden}#loading .bb i{display:block;height:100%;width:0;background:#ffd34d}
+@media (max-width:640px){#sMenu{background:linear-gradient(180deg,rgba(20,8,24,0) 30%,rgba(20,8,24,.88) 52%);align-items:center;justify-content:flex-end}.chip{font-size:13px;padding:4px 10px}.goal{width:80px}.shop{grid-template-columns:1fr}.bub{font-size:12px;min-width:80px;padding:4px 7px}}
+</style>
+<script type="importmap">{"imports":{"three":"./lib/three.module.min.js","three/addons/":"./lib/addons/"}}</script>
+</head>
+<body>
+<noscript><div style="color:#dfe6f5;font:16px system-ui;max-width:640px;margin:40px auto;padding:0 20px"><h1>Xe Cá Viên Chiên Cô Ba</h1><p>Xe Cá Viên Chiên Cô Ba là game 3D mô phỏng bán hàng và nấu ăn, chơi miễn phí trên trình duyệt. Khách hàng 3D tả thực đi trên phố đến gọi món: cá viên, bò viên, xúc xích, xiên rau củ với tương ớt hoặc tương đen. Bạn thả xiên vào chảo dầu, canh lúc vàng giòn, bỏ vào ly, rưới tương và giao thật nhanh để nhận tiền và tip. Đạt mục tiêu mỗi ngày để mở món mới và nâng cấp xe hàng: thêm chỗ chiên, lửa to, quạt mát, bảng hiệu đèn LED. Tiến độ được tự lưu.</p><p>Hãy bật JavaScript để chơi. <a style="color:#ffe08a" href="https://khogamef2p.pages.dev/">Xem thêm game tại Kho Game F2P</a></p></div></noscript>
+<canvas id="c"></canvas>
+<div id="fx"></div>
+<div id="loading">Đang nhóm lửa chảo dầu…<div class="bb"><i id="lbar"></i></div></div>
+<div class="top">
+  <div class="chip">📅 Ngày <span id="hDay">1</span></div>
+  <div class="chip">⏱ <span id="hTime">2:30</span></div>
+  <div class="chip">💰 <span id="hMoney">0</span>đ <small>/ mục tiêu <span id="hGoal">0</span>đ</small><span class="goal"><i id="hGoalBar"></i></span></div>
+  <div class="chip">⭐ <span id="hRep">3.0</span></div>
+  <div class="sp"></div>
+  <button class="ib" id="bPause">II</button>
+</div>
+<div class="hint" id="hint"></div>
+<div class="toast" id="toast"></div>
+
+<div class="screen on" id="sMenu"><div class="panel">
+  <h1>Xe Cá Viên<br>Chiên Cô Ba</h1>
+  <p class="sub">Một góc phố Sài Gòn lúc chiều tà, chiếc xe cá viên chiên thơm phức đang chờ khách. Chiên thật vàng, rưới đúng tương, giao thật nhanh để kiếm tiền và mở rộng xe hàng!</p>
+  <div id="menuBtns"></div>
+  <div class="help" id="helpText"></div>
+  <div class="credit">Người 3D: Microsoft Rocketbox (MIT) · Đồ ăn &amp; phố: Kenney (CC0) · <a href="credits.html" target="_blank">Nguồn</a> · <a href="/">← Kho Game F2P</a></div>
+</div></div>
+<div class="screen" id="sDay"><div class="card"><h2 id="dayT"></h2><div class="tx" id="dayX"></div><div id="dayB"></div></div></div>
+<div class="screen" id="sShop"><div class="card"><h2>🛒 Nâng cấp xe hàng</h2><div class="tx">Tiền đang có: <b id="shopMoney"></b>đ</div><div class="shop" id="shopList"></div><button class="big" id="bNextDay">Bán ngày tiếp ▶</button></div></div>
+<div class="screen" id="sPause"><div class="card"><h2>Tạm dừng</h2><div class="tx" id="pauseX"></div><button class="big" id="bResume">Bán tiếp</button><button class="big gray" id="bQuit">Về menu</button></div></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+
+// ================= RENDERER =================
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x8a6a8a, 30, 75);
+const camera = new THREE.PerspectiveCamera(50, 1, 0.05, 200);
+scene.add(new THREE.HemisphereLight(0xffd9c0, 0x403040, 1.05));
+const sun = new THREE.DirectionalLight(0xffb070, 2.2);
+sun.position.set(-14, 9, 14); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left: -14, right: 14, top: 12, bottom: -6, near: 1, far: 60 }); sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.02;
+scene.add(sun, sun.target); sun.target.position.set(0, 0, 3);
+{ const g = new THREE.SphereGeometry(150, 32, 16), p = g.attributes.position, col = [];
+  const top = new THREE.Color(0x3c3a78), mid = new THREE.Color(0xd9708a), hor = new THREE.Color(0xffc27a);
+  for (let i = 0; i < p.count; i++) { const t = Math.max(0, p.getY(i) / 150); const c = t < 0.25 ? hor.clone().lerp(mid, t / 0.25) : mid.clone().lerp(top, Math.min(1, (t - 0.25) / 0.6)); col.push(c.r, c.g, c.b); }
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  scene.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, fog: false, depthWrite: false }))); }
+let narrow = false;
+function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; narrow = w < h; camera.fov = narrow ? 72 : 50; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+
+// ================= TẢI =================
+const lbar = document.getElementById('lbar');
+const manager = new THREE.LoadingManager(); manager.onProgress = (u, a, b) => lbar.style.width = (a / b * 100) + '%';
+const loader = new GLTFLoader(manager);
+const G = {}; const CLIPS = { f: {}, m: {} };
+const PROPS = {
+  'food/skewer': 0, 'food/skewer-vegetables': 0, 'food/corn-dog': 0, 'food/pot': 0, 'food/bottle-ketchup': 0, 'food/bottle-musterd': 0, 'food/cup': 0, 'food/plate': 0,
+  'furniture/kitchenBar': 0, 'furniture/kitchenBarEnd': 0, 'furniture/trashcan': 0, 'furniture/stoolBar': 0, 'furniture/pottedPlant': 0,
+  'urban/wall-a': 0, 'urban/wall-a-window': 0, 'urban/wall-a-flat-window': 0, 'urban/wall-a-door': 0, 'urban/wall-a-roof': 0, 'urban/wall-a-painted': 0, 'urban/wall-b': 0, 'urban/wall-b-window': 0, 'urban/wall-b-door': 0, 'urban/wall-b-roof': 0, 'urban/wall-a-garage': 0,
+  'urban/road-asphalt-straight': 0, 'urban/road-asphalt-pavement': 0, 'urban/detail-light-single': 0, 'urban/detail-light-double': 0, 'urban/tree-park-large': 0, 'urban/tree-large': 0, 'urban/detail-bench': 0, 'urban/detail-dumpster-closed': 0, 'urban/detail-awning-wide': 0,
+  'car/sedan': 0, 'car/taxi': 0, 'car/van': 0, 'car/hatchback-sports': 0, 'car/delivery': 0, 'city/detail-parasol-a': 0
+};
+const PEOPLE = ['f01', 'f02', 'f03', 'f05', 'f08', 'f13', 'f14', 'f17', 'fp1', 'm08', 'm09', 'm10', 'm11', 'm14', 'm16', 'm17', 'm18', 'sm04'];
+const SOUNDS = ['coin', 'ui', 'levelup', 'potion', 'quest', 'place', 'trash', 'angry'];
+const sex = k => (k[0] === 'm' || k.startsWith('sm')) ? 'm' : 'f';
+const loadedPeople = [];
+let partTex;
+function prep(s) { s.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; if (o.isSkinnedMesh) o.frustumCulled = false; } }); return s; }
+function loadPerson(k) { return loader.loadAsync('m/' + k + '.glb').then(g => { G['p_' + k] = prep(g.scene); loadedPeople.push(k); }); }
+async function loadAll() {
+  const jobs = Object.keys(PROPS).map(k => loader.loadAsync('k/' + k + '.glb').then(g => G[k] = prep(g.scene)));
+  for (const s of ['f', 'm']) jobs.push(loader.loadAsync('m/anim_' + s + '.glb').then(g => { for (const c of g.animations) CLIPS[s][c.name.slice(2)] = c; }));
+  jobs.push(loader.loadAsync('m/chef_f.glb').then(g => G.chef = prep(g.scene)));
+  for (const k of ['f17', 'm10', 'f05', 'm09', 'f03']) jobs.push(loadPerson(k));
+  jobs.push(new THREE.TextureLoader(manager).loadAsync('particle.png').then(t => partTex = t));
+  jobs.push(...SOUNDS.map(s => fetch('sounds/' + s + '.mp3').then(r => r.arrayBuffer()).then(b => sraw[s] = b).catch(() => {})));
+  await Promise.all(jobs);
+}
+function loadRestPeople() { (async () => { for (const k of PEOPLE) if (!loadedPeople.includes(k)) { try { await new GLTFLoader().loadAsync('m/' + k + '.glb').then(g => { G['p_' + k] = prep(g.scene); loadedPeople.push(k); }); } catch (e) {} } })(); }
+const SIZES = {};
+function fit(key, size, axis = 'max') { const o = G[key].clone(true); if (!SIZES[key]) { const b = new THREE.Box3().setFromObject(G[key]); SIZES[key] = b.getSize(new THREE.Vector3()); } const s = SIZES[key]; const d = axis === 'y' ? s.y : axis === 'x' ? s.x : Math.max(s.x, s.y, s.z); o.scale.multiplyScalar(size / d); return o; }
+
+// ================= ÂM THANH =================
+let actx = null; const sbuf = {}, sraw = {}; let sizzleGain = null, ambGain = null;
+function initAudio() {
+  if (actx) return;
+  try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return; }
+  for (const k in sraw) actx.decodeAudioData(sraw[k].slice(0), b => sbuf[k] = b, () => {});
+  // tiếng xèo xèo của chảo dầu: tiếng ồn lọc
+  const len = actx.sampleRate * 2, buf = actx.createBuffer(1, len, actx.sampleRate), d = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (0.5 + 0.5 * Math.random() * (Math.random() < 0.02 ? 3 : 1));
+  const src = actx.createBufferSource(); src.buffer = buf; src.loop = true;
+  const hp = actx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 2500;
+  sizzleGain = actx.createGain(); sizzleGain.gain.value = 0; src.connect(hp).connect(sizzleGain).connect(actx.destination); src.start();
+  fetch('sounds/ambience.mp3').then(r => r.arrayBuffer()).then(b => actx.decodeAudioData(b)).then(buf => { const s = actx.createBufferSource(); s.buffer = buf; s.loop = true; ambGain = actx.createGain(); ambGain.gain.value = 0.25; s.connect(ambGain).connect(actx.destination); s.start(); }).catch(() => {});
+}
+function sfx(n, vol = 0.6, rate = 1) { if (!actx || !sbuf[n]) return; const s = actx.createBufferSource(); s.buffer = sbuf[n]; s.playbackRate.value = rate * (0.95 + Math.random() * 0.1); const g = actx.createGain(); g.gain.value = vol; s.connect(g).connect(actx.destination); s.start(); }
+addEventListener('pointerdown', initAudio); addEventListener('keydown', initAudio);
+
+// ================= NGƯỜI =================
+class Person {
+  constructor(key, src) {
+    this.key = key; this.sex = key === 'chef' ? 'f' : sex(key);
+    this.root = new THREE.Group(); this.model = SkeletonUtils.clone(src); this.root.add(this.model);
+    this.mixer = new THREE.AnimationMixer(this.model); this.actions = {}; this.cur = null;
+    this.mixer.addEventListener('finished', e => { if (this.after) { const f = this.after; this.after = null; f(); } });
+  }
+  play(name, { speed = 1, once = false, fade = 0.25, after = null } = {}) {
+    const c = CLIPS[this.sex][name]; if (!c) return;
+    let a = this.actions[name]; if (!a) a = this.actions[name] = this.mixer.clipAction(c);
+    a.timeScale = speed; this.after = after;
+    if (this.cur === a && !once) return;
+    a.reset(); a.setLoop(once ? THREE.LoopOnce : THREE.LoopRepeat); a.clampWhenFinished = once; a.fadeIn(fade).play();
+    if (this.cur && this.cur !== a) this.cur.fadeOut(fade); this.cur = a;
+  }
+}
+
+// ================= ĐƯỜNG PHỐ =================
+const world = new THREE.Group(); scene.add(world);
+const U = 3.2; // 1 khối retro-urban = 3.2 m
+const cars = []; const lampLights = [];
+function place(key, x, y, z, ry = 0, s = U) { const o = G[key].clone(true); o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); world.add(o); return o; }
+function buildStreet() {
+  // vỉa hè gần + đường + vỉa hè đối diện
+  for (let x = -12; x <= 12; x++) {
+    for (let z = -2; z <= 1; z++) place('urban/road-asphalt-pavement', x * U, 0, z * U + 1.6);
+    place('urban/road-asphalt-straight', x * U, -0.02, 9.6, Math.PI / 2);
+    place('urban/road-asphalt-straight', x * U, -0.02, 12.8, Math.PI / 2);
+    for (let z = 0; z < 2; z++) place('urban/road-asphalt-pavement', x * U, 0, 16 + z * U);
+  }
+  // dãy nhà đối diện (3 tầng)
+  const kinds = [['urban/wall-a-door', 'urban/wall-a-window', 'urban/wall-a-window', 'urban/wall-a-roof'], ['urban/wall-a-painted', 'urban/wall-a-flat-window', 'urban/wall-a-window', 'urban/wall-a-roof'], ['urban/wall-a-garage', 'urban/wall-a-flat-window', 'urban/wall-a-window', 'urban/wall-a-roof']];
+  for (let x = -10; x <= 10; x++) {
+    const k = kinds[(x + 30) % 3]; const floors = 2 + ((x * 7 + 21) % 3 === 0 ? 1 : 0);
+    for (let f = 0; f <= floors; f++) { const key = f === 0 ? k[0] : f === floors ? k[3] : k[1 + (f % 2)]; place(key, x * U, f * U, 22.2, Math.PI); }
+    if (x % 2 === 0) place('urban/detail-awning-wide', x * U, U * 0.82, 20.4, Math.PI);
+  }
+  // dãy nhà phía sau người bán (để thấy khi góc rộng)
+  for (let x = -10; x <= 10; x++) for (let f = 0; f <= 2; f++) place(f === 2 ? 'urban/wall-a-roof' : f === 0 ? 'urban/wall-a-door' : 'urban/wall-a-window', x * U, f * U, -6.6, 0);
+  // đèn đường + cây
+  for (let x = -3; x <= 3; x++) {
+    const lx = x * 9.6 + 4.8;
+    place('urban/detail-light-single', lx, 0, 6.3, Math.PI, 4.6);
+    const L = new THREE.PointLight(0xffc27a, 0, 16, 1.5); L.position.set(lx, 4.2, 7.2); world.add(L); lampLights.push(L);
+    place('urban/detail-light-single', lx - 4.8, 0, 15.6, 0, 4.6);
+    place('urban/tree-large', lx + 1.6, 0, 17.4, 0, 3.8);
+  }
+  place('urban/detail-bench', 6.2, 0, 4.6, Math.PI, 2.2); place('urban/detail-bench', -7.5, 0, 4.6, Math.PI, 2.2);
+  place('urban/detail-dumpster-closed', 13, 0, -4.4, 0, 2.6);
+  // xe cộ chạy qua
+  const cks = ['car/sedan', 'car/taxi', 'car/van', 'car/hatchback-sports', 'car/delivery'];
+  for (let i = 0; i < 5; i++) { const o = fit(cks[i], 4.3, 'max'); world.add(o); const lane = i % 2; cars.push({ o, lane, x: -40 + i * 18, sp: 7 + Math.random() * 4 }); }
+}
+
+// ================= XE HÀNG =================
+const clickables = []; // {obj, kind, data}
+const cart = {};
+const FOOD = {
+  cavien: { name: 'Cá viên', em: '🍢', key: 'food/skewer', raw: [2.3, 2.15, 1.85], done: [1.75, 1.2, 0.5], burnt: [0.32, 0.22, 0.15], cook: 4.2, price: 10000, day: 1 },
+  bovien: { name: 'Bò viên', em: '🍖', key: 'food/skewer', raw: [1.7, 1.25, 1.15], done: [0.95, 0.62, 0.4], burnt: [0.25, 0.15, 0.1], cook: 5.2, price: 12000, day: 2 },
+  xucxich: { name: 'Xúc xích', em: '🌭', key: 'food/corn-dog', raw: [1.9, 1.35, 1.25], done: [1.35, 0.75, 0.42], burnt: [0.3, 0.17, 0.12], cook: 6.0, price: 15000, day: 3 },
+  raucu: { name: 'Xiên rau củ', em: '🥕', key: 'food/skewer-vegetables', raw: [1, 1, 1], done: [1.1, 0.9, 0.62], burnt: [0.3, 0.24, 0.2], cook: 3.6, price: 8000, day: 4 }
+};
+const SAUCE = { ot: { name: 'Tương ớt', em: '🌶️' }, den: { name: 'Tương đen', em: '🫘' } };
+function tintObj(o, hex, k = 1) { o.traverse(m => { if (m.isMesh) { if (!m.userData.base) { m.material = m.material.clone(); m.userData.base = m.material.color.clone(); } m.material.color.copy(m.userData.base).lerp(new THREE.Color(hex), k); } }); }
+function mulObj(o, rgb) { o.traverse(m => { if (m.isMesh) { if (!m.userData.base) { m.material = m.material.clone(); m.userData.base = m.material.color.clone(); } m.material.color.setRGB(m.userData.base.r * rgb[0], m.userData.base.g * rgb[1], m.userData.base.b * rgb[2]); } }); }
+function makeFood(type) { const F = FOOD[type]; const o = fit(F.key, type === 'xucxich' ? 0.26 : 0.24, 'max'); mulObj(o, F.raw); o.traverse(m => { if (m.isMesh) m.castShadow = true; }); return o; }
+function buildCart() {
+  const C = new THREE.Group(); C.position.set(0, 0, 0); world.add(C); cart.g = C;
+  // thân quầy: 3 module bếp
+  const W = 0.62;
+  for (let i = -1; i <= 1; i++) { const b = fit('furniture/kitchenBar', 0.92, 'y'); b.position.set(i * W - W / 2, 0, 0.32); C.add(b); }
+  const top = 0.92; cart.top = top;
+  // ô dù xanh
+  const um = fit('city/detail-parasol-a', 2.6, 'y'); um.position.set(-2.05, 0, -0.85); C.add(um);
+  // đèn bóng vàng trên xe
+  const bulb = new THREE.PointLight(0xffc06a, 6, 7, 1.8); bulb.position.set(0, 2.1, 0.1); C.add(bulb); cart.bulb = bulb;
+  // khay đồ sống (bên trái)
+  cart.trays = [];
+  const types = Object.keys(FOOD);
+  types.forEach((t, i) => {
+    const plate = fit('food/plate', 0.3, 'max'); plate.position.set(0.78 - (i % 2) * 0.3, top + 0.005, 0.02 + Math.floor(i / 2) * 0.3); C.add(plate);
+    const pile = new THREE.Group(); pile.position.copy(plate.position); C.add(pile);
+    for (let k = 0; k < 3; k++) { const f = makeFood(t); f.position.set(0, 0.02 + k * 0.035, (k - 1) * 0.04); f.rotation.y = 0.3 * (k - 1); pile.add(f); }
+    cart.trays.push({ type: t, plate, pile }); clickables.push({ obj: pile, kind: 'tray', data: t }); clickables.push({ obj: plate, kind: 'tray', data: t });
+  });
+  // nồi dầu (giữa)
+  const pot = fit('food/pot', 0.46, 'max'); pot.position.set(0.0, top, 0.12); C.add(pot); cart.pot = pot;
+  const oil = new THREE.Mesh(new THREE.CircleGeometry(0.18, 32), new THREE.MeshStandardMaterial({ color: 0xc9861c, roughness: 0.15, metalness: 0.2, emissive: 0x3a1c00 }));
+  oil.rotation.x = -Math.PI / 2; oil.position.set(0, top + 0.15, 0.12); C.add(oil); cart.oil = oil;
+  clickables.push({ obj: pot, kind: 'pot' });
+  // ly giấy phục vụ (phải)
+  const cup = fit('food/cup', 0.2, 'y'); cup.position.set(-0.5, top, 0.1); C.add(cup); cart.cup = cup; clickables.push({ obj: cup, kind: 'cup' });
+  cart.cupItems = [];
+  // tương
+  const k1 = fit('food/bottle-ketchup', 0.26, 'y'); k1.position.set(-0.78, top, -0.02); C.add(k1);
+  const k2 = fit('food/bottle-musterd', 0.26, 'y'); k2.position.set(-0.84, top, 0.24); tintObj(k2, 0x3a2216, 0.85); C.add(k2);
+  cart.sauceObjs = { ot: k1, den: k2 };
+  clickables.push({ obj: k1, kind: 'sauce', data: 'ot' }); clickables.push({ obj: k2, kind: 'sauce', data: 'den' });
+  // thùng rác
+  const tr = fit('furniture/trashcan', 0.7, 'y'); tr.position.set(-1.3, 0, 0.25); C.add(tr); clickables.push({ obj: tr, kind: 'trash' });
+  const plant = fit('furniture/pottedPlant', 0.9, 'y'); plant.position.set(1.4, 0, 0.0); C.add(plant);
+  // ghế cho khách ngồi đợi
+  for (let i = 0; i < 2; i++) { const s = fit('furniture/stoolBar', 0.7, 'y'); s.position.set(2.5 + i * 0.7, 0, 1.6); C.add(s); }
+}
+
+// ================= TRẠNG THÁI GAME =================
+let state = 'menu';
+const SAVE_KEY = 'xecavienchien_v1';
+let save = null;
+function defSave() { return { day: 1, money: 0, total: 0, rep: 3, up: { slot: 0, fire: 0, fan: 0, sign: 0 }, best: 0 }; }
+try { save = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); } catch (e) {}
+function persist() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch (e) {} }
+const UPG = {
+  slot: { name: 'Thêm chỗ chiên', ic: '🍳', d: lv => `Chiên cùng lúc ${3 + lv + 1} xiên`, cost: lv => [40000, 90000, 160000][lv], max: 3 },
+  fire: { name: 'Lửa to hơn', ic: '🔥', d: lv => `Chín nhanh hơn ${(lv + 1) * 20}%`, cost: lv => [50000, 110000, 200000][lv], max: 3 },
+  fan: { name: 'Quạt mát cho khách', ic: '🌀', d: lv => `Khách kiên nhẫn hơn ${(lv + 1) * 20}%`, cost: lv => [45000, 100000][lv], max: 2 },
+  sign: { name: 'Bảng hiệu đèn LED', ic: '💡', d: lv => `Khách đến đông hơn, tip cao hơn`, cost: lv => [70000, 150000][lv], max: 2 }
+};
+const slotsCount = () => 3 + save.up.slot;
+const cookMul = () => 1 + save.up.fire * 0.2;
+const goalOf = d => 60000 + (d - 1) * 35000;
+const DAY_LEN = 150;
+let day = null; // {t, money, served, angry, combo}
+let fryer = []; // {type, t, obj, slot}
+let held = null;
+
+// ================= KHÁCH =================
+let customers = [];
+const QUEUE = [{ x: -1.15, z: 1.25 }, { x: 0, z: 1.3 }, { x: 1.15, z: 1.25 }];
+const fx = document.getElementById('fx');
+function availableFoods() { return Object.keys(FOOD).filter(k => FOOD[k].day <= save.day); }
+function makeOrder() {
+  const av = availableFoods(); const items = {};
+  const n = 1 + Math.floor(Math.random() * Math.min(3, 1 + save.day * 0.6));
+  for (let i = 0; i < n; i++) { const t = av[Math.floor(Math.random() * av.length)]; items[t] = (items[t] || 0) + 1; }
+  const r = Math.random(); const sauce = r < 0.15 ? [] : r < 0.55 ? ['ot'] : r < 0.75 ? ['den'] : ['ot', 'den'];
+  return { items, sauce: save.day >= 2 ? sauce : (r < 0.3 ? [] : ['ot']) };
+}
+function orderText(o) {
+  const parts = Object.entries(o.items).map(([t, n]) => `${FOOD[t].em} ${FOOD[t].name} ×${n}`);
+  parts.push(o.sauce.length ? o.sauce.map(s => SAUCE[s].em + ' ' + SAUCE[s].name).join(' + ') : '🚫 Không tương');
+  return parts.join('<br>');
+}
+function spawnCustomer() {
+  const free = QUEUE.findIndex((q, i) => !customers.some(c => c.slot === i && !c.leaving));
+  if (free < 0 || !loadedPeople.length) return;
+  const recent = customers.map(c => c.key);
+  let pool = loadedPeople.filter(k => !recent.includes(k)); if (!pool.length) pool = loadedPeople;
+  const key = pool[Math.floor(Math.random() * pool.length)];
+  const p = new Person(key, G['p_' + key]);
+  const fromLeft = Math.random() < 0.5; const sx = fromLeft ? -9 : 9;
+  const qx = QUEUE[free].x * (narrow ? 0.62 : 1);
+  p.root.position.set(sx, 0, 3.0); world.add(p.root);
+  const patience = (32 + Math.random() * 10 - Math.min(10, save.day)) * (1 + save.up.fan * 0.2);
+  const c = { p, key, slot: free, state: 'walk', t: 0, order: makeOrder(), patience, maxP: patience, path: [new THREE.Vector3(qx + (fromLeft ? -0.6 : 0.6), 0, 3.0), new THREE.Vector3(qx, 0, QUEUE[free].z)], idleAnim: Math.random() < 0.5 ? 'idle_waiting_01' : 'idle_neutral_01' };
+  p.play(Math.random() < 0.5 ? 'walk_neutral_01' : 'walk_stroll_01');
+  const el = document.createElement('div'); el.className = 'bub'; el.style.display = 'none';
+  el.addEventListener('pointerdown', ev => { ev.stopPropagation(); serve(c); });
+  fx.appendChild(el); c.el = el;
+  customers.push(c);
+}
+function updateCustomers(dt) {
+  for (const c of customers) {
+    c.t += dt; c.p.mixer.update(dt);
+    const pos = c.p.root.position;
+    if (c.state === 'walk' || c.state === 'leave') {
+      const tgt = c.path[0];
+      if (!tgt) { if (c.state === 'leave') { c.gone = true; world.remove(c.p.root); c.el.remove(); continue; } c.state = 'wait'; c.t = 0; c.p.play(c.idleAnim); c.p.root.rotation.y = Math.PI; c.el.style.display = ''; renderBubble(c); greet(c); continue; }
+      const d = tgt.clone().sub(pos); d.y = 0; const dist = d.length();
+      if (dist < 0.06) { c.path.shift(); continue; }
+      const sp = 1.25; pos.addScaledVector(d.normalize(), Math.min(dist, sp * dt));
+      const want = Math.atan2(d.x, d.z); c.p.root.rotation.y += Math.atan2(Math.sin(want - c.p.root.rotation.y), Math.cos(want - c.p.root.rotation.y)) * Math.min(1, dt * 8);
+    } else if (c.state === 'wait') {
+      c.patience -= dt;
+      if (c.patience < c.maxP * 0.3 && !c.impatient) { c.impatient = true; c.p.play('idle_look_around_01'); }
+      if (c.patience <= 0) leaveAngry(c, 'Lâu quá, thôi đi!');
+      renderBubble(c);
+    } else if (c.state === 'react') {
+      if (c.t > c.reactT) { leave(c); }
+    }
+    // vị trí bong bóng
+    if (c.el.style.display !== 'none') {
+      const p = pos.clone(); p.y = 1.95; p.project(camera);
+      c.el.style.left = ((p.x + 1) / 2 * innerWidth) + 'px'; c.el.style.top = ((1 - p.y) / 2 * innerHeight) + 'px';
+    }
+  }
+  customers = customers.filter(c => !c.gone);
+}
+function renderBubble(c) {
+  const ratio = Math.max(0, c.patience / c.maxP); const col = ratio > 0.5 ? '#4cc35a' : ratio > 0.25 ? '#f2b531' : '#e2463a';
+  const ready = matchCup(c.order).ok;
+  const html = `${orderText(c.order)}<div class="pt"><i style="width:${ratio * 100}%;background:${col}"></i></div>${cart.cupItems.length ? '<span class="giao">Bấm để giao ly</span>' : ''}`;
+  if (c._h !== html) { c.el.innerHTML = html; c._h = html; }
+  c.el.classList.toggle('ready', ready);
+}
+function greet(c) { if (Math.random() < 0.5) c.p.play('wave_01', { once: true, after: () => c.state === 'wait' && c.p.play(c.idleAnim) }); }
+function leave(c) {
+  c.state = 'leave'; c.el.style.display = 'none';
+  const dir = Math.random() < 0.5 ? -1 : 1; c.path = [new THREE.Vector3(c.p.root.position.x, 0, 3.0), new THREE.Vector3(dir * 16, 0, 3.0)];
+  c.p.play('walk_neutral_01');
+}
+function leaveAngry(c, msg) {
+  if (c.state !== 'wait') return;
+  c.state = 'react'; c.t = 0; c.reactT = 2.2; c.el.style.display = 'none';
+  c.p.play('idle_angry_01', { once: true }); sfx('angry', 0.5);
+  popText(c.p.root.position, msg, '#ff7a6a'); day.angry++; day.combo = 0; save.rep = Math.max(1, save.rep - 0.15); hud();
+}
+
+// người đi đường (không mua)
+let walkers = [], walkT = 2;
+function updateWalkers(dt) {
+  walkT -= dt;
+  if (walkT <= 0 && walkers.length < 4 && loadedPeople.length > 3) {
+    walkT = 3 + Math.random() * 4;
+    const key = loadedPeople[Math.floor(Math.random() * loadedPeople.length)];
+    const p = new Person(key, G['p_' + key]); const dir = Math.random() < 0.5 ? 1 : -1; const far = Math.random() < 0.6;
+    const z = far ? 16.6 + Math.random() * 1.6 : 4.4 + Math.random() * 0.6;
+    p.root.position.set(-dir * 30, 0, z); p.root.rotation.y = dir > 0 ? Math.PI / 2 : -Math.PI / 2; world.add(p.root);
+    p.play(Math.random() < 0.5 ? 'walk_neutral_01' : 'walk_stroll_01'); p.mixer.update(Math.random());
+    walkers.push({ p, dir, sp: 1.15 + Math.random() * 0.3 });
+  }
+  for (const w of walkers) { w.p.mixer.update(dt); w.p.root.position.x += w.dir * w.sp * dt; if (Math.abs(w.p.root.position.x) > 31) { world.remove(w.p.root); w.gone = true; } }
+  walkers = walkers.filter(w => !w.gone);
+}
+
+// ================= THAO TÁC =================
+function cupState() {
+  const items = {}; let raw = 0, burnt = 0, perfect = 0;
+  for (const it of cart.cupItems) { items[it.type] = (items[it.type] || 0) + 1; if (it.q === 'raw') raw++; else if (it.q === 'burnt') burnt++; else if (it.q === 'perfect') perfect++; }
+  return { items, raw, burnt, perfect, sauce: [...(cart.cupSauce || [])].sort() };
+}
+function matchCup(order) {
+  if (!cart.cupItems.length) return { ok: false };
+  const s = cupState(); const want = order.items;
+  const keys = new Set([...Object.keys(want), ...Object.keys(s.items)]);
+  for (const k of keys) if ((want[k] || 0) !== (s.items[k] || 0)) return { ok: false, why: 'items' };
+  if (order.sauce.slice().sort().join() !== s.sauce.join()) return { ok: false, why: 'sauce' };
+  return { ok: true, s };
+}
+function serve(c) {
+  if (state !== 'play' || c.state !== 'wait') return;
+  if (!cart.cupItems.length) { toast('Ly còn trống! Chiên xong rồi bấm vào xiên để bỏ vào ly.'); return; }
+  const m = matchCup(c.order);
+  chef.play('documents_take', { once: true, speed: 1.3, after: () => chef.play('idle_neutral_01') });
+  if (!m.ok) {
+    c.p.play('gestic_listen_deny_01', { once: true, after: () => c.state === 'wait' && c.p.play(c.idleAnim) });
+    popText(c.p.root.position, m.why === 'sauce' ? 'Sai tương rồi!' : 'Không phải món tôi gọi!', '#ffb36a'); sfx('angry', 0.35, 1.3);
+    c.patience -= 4; return;
+  }
+  const s = m.s; let price = 0; for (const [t, n] of Object.entries(s.items)) price += FOOD[t].price * n;
+  let msg, tip = 0, happy = true;
+  if (s.raw > 0) { msg = 'Còn sống nè!'; happy = false; price = Math.round(price * 0.5); }
+  else if (s.burnt > 0) { msg = 'Hơi khét…'; happy = false; price = Math.round(price * 0.7); }
+  else {
+    const speed = c.patience / c.maxP; day.combo++;
+    tip = Math.round(price * (0.1 + speed * 0.3 + (s.perfect === cart.cupItems.length ? 0.15 : 0) + save.up.sign * 0.05) * (save.rep / 3) / 1000) * 1000;
+    msg = s.perfect === cart.cupItems.length ? (Math.random() < 0.5 ? 'Ngon quá trời!' : 'Vàng giòn tuyệt!') : 'Ngon!';
+  }
+  const comboBonus = happy && day.combo >= 3 ? Math.min(day.combo, 8) * 1000 : 0;
+  const total = price + tip + comboBonus;
+  day.money += total; save.money += total; save.total += total; day.served++;
+  if (happy) { save.rep = Math.min(5, save.rep + 0.06); } else { save.rep = Math.max(1, save.rep - 0.08); day.combo = 0; }
+  popText(c.p.root.position, `+${fmt(total)}đ`, '#ffe066', 0); if (tip) popText(c.p.root.position, `Tip ${fmt(tip)}đ`, '#9fe8a8', 0.35); if (comboBonus) popText(c.p.root.position, `Combo ×${day.combo}!`, '#ff9de0', 0.7);
+  popText(c.p.root.position, msg, happy ? '#ffffff' : '#ffb36a', 1.05);
+  sfx('coin', 0.6); if (happy && s.perfect) sfx('quest', 0.35, 1.2);
+  clearCup(false);
+  c.state = 'react'; c.t = 0; c.el.style.display = 'none';
+  if (happy) { const a = ['cheer_01', 'claphands_01', 'gestic_listen_accept_01'][Math.floor(Math.random() * 3)]; c.reactT = 2.4; c.p.play(a, { once: true }); }
+  else { c.reactT = 2.0; c.p.play('gestic_listen_deny_01', { once: true }); }
+  hud();
+}
+function clickTray(t) {
+  if (fryer.length >= slotsCount()) { toast('Chảo đầy rồi! Đợi chín rồi gắp ra ly nhé.'); return; }
+  const used = fryer.map(f => f.slot); let slot = 0; while (used.includes(slot)) slot++;
+  const o = makeFood(t); cart.g.add(o);
+  const f = { type: t, t: 0, obj: o, slot, q: 'raw' }; fryer.push(f); posFry(f, 0);
+  sfx('place', 0.5); clickables.push({ obj: o, kind: 'fry', data: f });
+  splash();
+}
+function posFry(f, time) {
+  const n = slotsCount(); const a = f.slot / n * Math.PI * 2 + time * 0.25;
+  f.obj.position.set(Math.cos(a) * 0.085, cart.top + 0.13 + Math.sin(time * 6 + f.slot) * 0.004, 0.12 + Math.sin(a) * 0.085);
+  f.obj.rotation.set(0, -a + Math.PI / 2, 0);
+}
+function quality(f) { const p = f.t / (FOOD[f.type].cook / cookMul()); return p < 1 ? 'raw' : p < 1.9 ? 'perfect' : p < 2.4 ? 'done' : 'burnt'; }
+function clickFry(f) {
+  if (cart.cupItems.length >= 4) { toast('Ly đầy rồi (tối đa 4 xiên)! Giao cho khách hoặc bỏ vào thùng rác.'); return; }
+  const q = quality(f);
+  fryer = fryer.filter(x => x !== f); removeClickable(f.obj);
+  cart.cupItems.push({ type: f.type, q, obj: f.obj });
+  const i = cart.cupItems.length - 1;
+  f.obj.rotation.set(0, 0, Math.PI / 2 - 0.15 + (i % 2) * 0.3); f.obj.position.set(-0.5 + (i - 1.5) * 0.025, cart.top + 0.24, 0.1 + (i % 2 - 0.5) * 0.03);
+  sfx('place', 0.5, 1.3);
+  if (q === 'raw') toast('Ối, xiên này còn sống! Khách sẽ không vui đâu…', 1800);
+  if (q === 'burnt') toast('Xiên này khét rồi! Bỏ vào thùng rác cho chắc.', 1800);
+  if (q === 'perfect') sparkle(f.obj.getWorldPosition(new THREE.Vector3()));
+  refreshBubbles();
+}
+function clickSauce(s) {
+  if (!cart.cupItems.length) { toast('Bỏ xiên vào ly trước rồi mới rưới tương nhé!'); return; }
+  cart.cupSauce = cart.cupSauce || new Set();
+  if (cart.cupSauce.has(s)) { toast(SAUCE[s].name + ' đã có rồi!', 1200); return; }
+  cart.cupSauce.add(s); sfx('potion', 0.5, s === 'ot' ? 1.2 : 0.9);
+  const b = cart.sauceObjs[s]; const home = b.position.clone();
+  effects.push({ t: 0.6, T: 0.6, f: k => { const u = 1 - k; b.position.set(home.x + (-0.5 - home.x) * Math.sin(u * Math.PI) * 0.7, home.y + Math.sin(u * Math.PI) * 0.18, home.z + (0.1 - home.z) * Math.sin(u * Math.PI) * 0.7); b.rotation.z = -Math.sin(u * Math.PI) * 2; }, end: () => { b.position.copy(home); b.rotation.z = 0; } });
+  for (const it of cart.cupItems) it.obj.traverse(m => { if (m.isMesh) m.material.color.lerp(new THREE.Color(s === 'ot' ? 0xb8200f : 0x2a1408), 0.35); });
+  drip(s === 'ot' ? 0xd02a1a : 0x3a1a0a);
+  refreshBubbles();
+}
+function clearCup(trash = true) {
+  for (const it of cart.cupItems) cart.g.remove(it.obj); cart.cupItems = []; cart.cupSauce = new Set();
+  if (trash) sfx('trash', 0.5); refreshBubbles();
+}
+function removeClickable(obj) { const i = clickables.findIndex(c => c.obj === obj); if (i >= 0) clickables.splice(i, 1); }
+function refreshBubbles() { for (const c of customers) if (c.state === 'wait') renderBubble(c); updateHint(); }
+
+// ================= CHỌN BẰNG CHUỘT =================
+const ray = new THREE.Raycaster(); const mouse = new THREE.Vector2();
+let hover = null;
+function pick(e) {
+  mouse.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1); ray.setFromCamera(mouse, camera);
+  const objs = clickables.map(c => c.obj); const hits = ray.intersectObjects(objs, true);
+  if (!hits.length) return null;
+  let o = hits[0].object; while (o && !objs.includes(o)) o = o.parent;
+  // ưu tiên xiên trong chảo
+  const fryHit = hits.map(h => { let x = h.object; while (x && !objs.includes(x)) x = x.parent; return clickables.find(c => c.obj === x); }).find(c => c && c.kind === 'fry');
+  return fryHit || clickables.find(c => c.obj === o);
+}
+canvas.addEventListener('pointerdown', e => {
+  if (state !== 'play') return;
+  const c = pick(e); if (!c) {
+    // bấm vào khách
+    mouse.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1); ray.setFromCamera(mouse, camera);
+    for (const cu of customers) if (cu.state === 'wait' && ray.intersectObject(cu.p.root, true).length) return serve(cu);
+    return;
+  }
+  if (c.kind === 'tray') clickTray(c.data);
+  else if (c.kind === 'fry') clickFry(c.data);
+  else if (c.kind === 'pot') { const ready = fryer.filter(f => quality(f) !== 'raw').sort((a, b) => b.t - a.t)[0]; if (ready) clickFry(ready); else if (fryer.length) toast('Chưa chín đâu, chờ chút nhé!', 1200); else toast('Bấm vào đĩa đồ sống bên trái để thả vào chảo.', 1800); }
+  else if (c.kind === 'sauce') clickSauce(c.data);
+  else if (c.kind === 'trash') { if (cart.cupItems.length) clearCup(true); else { const b = fryer.find(f => quality(f) === 'burnt'); if (b) { fryer = fryer.filter(x => x !== b); cart.g.remove(b.obj); removeClickable(b.obj); sfx('trash', 0.5); } } }
+  else if (c.kind === 'cup') { const w = customers.filter(x => x.state === 'wait').find(x => matchCup(x.order).ok); if (w) serve(w); else if (cart.cupItems.length) toast('Bấm vào bong bóng của khách để giao ly. Muốn làm lại thì bấm thùng rác.', 2200); }
+});
+canvas.addEventListener('pointermove', e => {
+  if (state !== 'play' || e.pointerType !== 'mouse') return;
+  const c = pick(e); const o = c ? c.obj : null;
+  if (o !== hover) { if (hover) setGlow(hover, 0); if (o) setGlow(o, 1); hover = o; canvas.style.cursor = o ? 'pointer' : 'default'; }
+});
+function setGlow(o, on) { o.traverse(m => { if (m.isMesh) { if (!m.userData.gl) { m.material = m.material.clone(); m.userData.gl = m.material.emissive ? m.material.emissive.clone() : new THREE.Color(); } if (m.material.emissive) m.material.emissive.copy(on ? new THREE.Color(0x553311) : m.userData.gl); } }); }
+
+// ================= HIỆU ỨNG =================
+let effects = [];
+function updateEffects(dt) { for (const f of effects) { f.t -= dt; f.f(Math.max(0, f.t / (f.T || 0.4)), dt); if (f.t <= 0) { f.end && f.end(); f.done = true; } } effects = effects.filter(f => !f.done); }
+function spr(color, size, add = true) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: partTex, color, transparent: true, depthWrite: false, blending: add ? THREE.AdditiveBlending : THREE.NormalBlending })); s.scale.setScalar(size); world.add(s); return s; }
+function splash() { for (let i = 0; i < 8; i++) { const s = spr(0xffd27a, 0.04); s.position.set((Math.random() - .5) * 0.2, cart.top + 0.16, 0.12 + (Math.random() - .5) * 0.2); const v = new THREE.Vector3((Math.random() - .5) * 0.6, 0.6 + Math.random() * 0.6, (Math.random() - .5) * 0.6); effects.push({ t: 0.4, T: 0.4, f: (k, dt) => { v.y -= 3 * dt; s.position.addScaledVector(v, dt); s.material.opacity = k; }, end: () => world.remove(s) }); } }
+function sparkle(p) { for (let i = 0; i < 8; i++) { const s = spr(0xfff0a0, 0.06); s.position.copy(p); const v = new THREE.Vector3((Math.random() - .5), Math.random() * 0.8, (Math.random() - .5)); effects.push({ t: 0.6, T: 0.6, f: (k, dt) => { s.position.addScaledVector(v, dt); s.material.opacity = k; }, end: () => world.remove(s) }); } }
+function drip(color) { for (let i = 0; i < 10; i++) { const s = spr(color, 0.035, false); s.position.set(-0.5 + (Math.random() - .5) * 0.06, cart.top + 0.36, 0.1 + (Math.random() - .5) * 0.05); const v = new THREE.Vector3(0, -0.4 - Math.random() * 0.4, 0); effects.push({ t: 0.5, T: 0.5, f: (k, dt) => { s.position.addScaledVector(v, dt); }, end: () => world.remove(s) }); } }
+let bubbleT = 0;
+function fryFx(dt, time) {
+  bubbleT -= dt; const n = fryer.length;
+  if (n && bubbleT <= 0) { bubbleT = 0.06 / n; const s = spr(0xfff3c0, 0.025 + Math.random() * 0.02); s.position.set((Math.random() - .5) * 0.26, cart.top + 0.155, 0.12 + (Math.random() - .5) * 0.26); effects.push({ t: 0.35, T: 0.35, f: (k, dt) => { s.position.y += dt * 0.08; s.material.opacity = k; }, end: () => world.remove(s) }); }
+  if (n && Math.random() < dt * 3) { const s = spr(0xffffff, 0.12, false); s.material.opacity = 0.25; s.position.set((Math.random() - .5) * 0.2, cart.top + 0.2, 0.12); effects.push({ t: 1.4, T: 1.4, f: (k, dt) => { s.position.y += dt * 0.35; s.scale.setScalar(0.12 + (1 - k) * 0.3); s.material.opacity = 0.22 * k; }, end: () => world.remove(s) }); }
+  if (sizzleGain) sizzleGain.gain.value += ((state === 'play' ? Math.min(0.12, n * 0.035) : 0) - sizzleGain.gain.value) * Math.min(1, dt * 5);
+}
+function popText(pos, txt, color, delay = 0) {
+  setTimeout(() => {
+    const el = document.createElement('div'); el.className = 'pop'; el.style.color = color; el.textContent = txt; fx.appendChild(el);
+    const p = pos.clone(); p.y = 2.0; let t = 0;
+    const tick = () => { t += 1 / 60; const q = p.clone(); q.y += t * 0.6; q.project(camera); el.style.left = ((q.x + 1) / 2 * innerWidth) + 'px'; el.style.top = ((1 - q.y) / 2 * innerHeight) + 'px'; el.style.opacity = Math.min(1, 2.2 - t * 1.2); if (t < 1.8) requestAnimationFrame(tick); else el.remove(); };
+    tick();
+  }, delay * 1000);
+}
+// nhãn & thanh chín trên chảo
+const fryBars = new Map(); const labels = [];
+function makeLabels() {
+  for (const l of labels) l.el.remove(); labels.length = 0;
+  const add = (txt, obj, dy) => { const el = document.createElement('div'); el.className = 'lab'; el.textContent = txt; fx.appendChild(el); labels.push({ el, obj, dy }); };
+  for (const t of cart.trays) { const F = FOOD[t.type]; if (F.day <= save.day) add(F.em + ' ' + F.name, t.plate, 0.12); t.plate.visible = t.pile.visible = F.day <= save.day; }
+  add('🔥 Chảo dầu', cart.pot, 0.36); add('🥤 Ly', cart.cup, 0.32); add('🌶️ Ớt', cart.sauceObjs.ot, 0.34);
+  if (save.day >= 2) add('🫘 Tương đen', cart.sauceObjs.den, 0.34); cart.sauceObjs.den.visible = save.day >= 2;
+}
+function updateLabels() {
+  for (const l of labels) { if (!l.obj.visible) { l.el.style.display = 'none'; continue; } const p = l.obj.getWorldPosition(new THREE.Vector3()); p.y += l.dy; p.project(camera); l.el.style.display = ''; l.el.style.left = ((p.x + 1) / 2 * innerWidth) + 'px'; l.el.style.top = ((1 - p.y) / 2 * innerHeight) + 'px'; }
+  for (const f of fryer) {
+    let b = fryBars.get(f); if (!b) { b = document.createElement('div'); b.className = 'tbar'; b.innerHTML = '<i></i>'; fx.appendChild(b); fryBars.set(f, b); }
+    const p = f.obj.getWorldPosition(new THREE.Vector3()); p.y += 0.12; p.project(camera);
+    b.style.left = ((p.x + 1) / 2 * innerWidth) + 'px'; b.style.top = ((1 - p.y) / 2 * innerHeight) + 'px';
+    const r = f.t / (FOOD[f.type].cook / cookMul()); const q = quality(f);
+    const i = b.firstChild; i.style.width = Math.min(100, r / 2.4 * 100) + '%'; i.style.background = q === 'raw' ? '#9aa4b0' : q === 'perfect' ? '#4cc35a' : q === 'done' ? '#f2b531' : '#3a2412';
+  }
+  for (const [f, b] of fryBars) if (!fryer.includes(f)) { b.remove(); fryBars.delete(f); }
+}
+function updateFryer(dt, time) {
+  for (const f of fryer) {
+    f.t += dt; posFry(f, time); const F = FOOD[f.type]; const r = f.t / (F.cook / cookMul());
+    const q = quality(f);
+    if (q !== f.q) { f.q = q; if (q === 'perfect') { sfx('ui', 0.4, 1.4); sparkle(f.obj.getWorldPosition(new THREE.Vector3())); } }
+    const L = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
+    const c = r < 1 ? L(F.raw, F.done, r) : r < 1.9 ? F.done : L(F.done, F.burnt, Math.min(1, (r - 1.9) / 0.8));
+    if (!f.sauced) mulObj(f.obj, c);
+  }
+}
+
+// ================= CHU KỲ NGÀY =================
+let spawnT = 0, chef = null;
+function startDay() {
+  initAudio();
+  for (const c of customers) { world.remove(c.p.root); c.el.remove(); } customers = [];
+  for (const f of fryer) { cart.g.remove(f.obj); removeClickable(f.obj); } fryer = []; clearCup(false);
+  day = { t: DAY_LEN, money: 0, served: 0, angry: 0, combo: 0, goal: goalOf(save.day) };
+  spawnT = 1; state = 'play'; show(null); makeLabels(); hud(); updateHint();
+  const unlock = Object.values(FOOD).find(F => F.day === save.day && save.day > 1);
+  toast(save.day === 1 ? 'Ngày đầu tiên! Bấm đĩa cá viên để thả vào chảo dầu 🔥' : unlock ? `Món mới: ${unlock.em} ${unlock.name}!` : `Ngày ${save.day} – mục tiêu ${fmt(day.goal)}đ`, 3500);
+  if (save.day === 2) setTimeout(() => toast('Có thêm 🫘 Tương đen! Đọc kỹ khách muốn tương gì nhé.', 3500), 4000);
+}
+function endDay() {
+  state = 'dayend';
+  for (const c of customers) { c.el.style.display = 'none'; if (c.state === 'wait') leave(c); }
+  const pass = day.money >= day.goal;
+  save.best = Math.max(save.best, save.day);
+  const stars = Math.round(save.rep * 10) / 10;
+  $('dayT').textContent = pass ? `🎉 Hết ngày ${save.day} – Đạt mục tiêu!` : `Hết ngày ${save.day}`;
+  $('dayX').innerHTML = `Bán được <b>${fmt(day.money)}đ</b> (mục tiêu ${fmt(day.goal)}đ)<br>Khách vui lòng: <b>${day.served}</b> · Khách bỏ về: <b>${day.angry}</b><br>Uy tín: <span class="stars">${'★'.repeat(Math.round(save.rep))}${'☆'.repeat(5 - Math.round(save.rep))}</span> ${stars.toFixed(1)}<br>Tổng tiền tiết kiệm: <b>${fmt(save.money)}đ</b>`
+    + (pass ? '' : '<br><small>Chưa đạt mục tiêu — hãy bán lại ngày này nhé (tiền vẫn được giữ).</small>');
+  const B = $('dayB'); B.innerHTML = '';
+  const mk = (t, cls, f) => { const b = document.createElement('button'); b.className = 'big ' + cls; b.textContent = t; b.onclick = f; B.appendChild(b); };
+  if (pass) { save.day++; mk('🛒 Nâng cấp xe hàng', '', openShop); } else mk('Bán lại ngày ' + save.day, '', startDay);
+  mk('Về menu', 'gray', toMenu);
+  persist(); sfx(pass ? 'levelup' : 'angry', 0.6); show('sDay');
+  if (pass) chef.play('cheer_01', { once: true, after: () => chef.play('idle_neutral_01') });
+}
+function openShop() {
+  $('shopMoney').textContent = fmt(save.money);
+  const L = $('shopList'); L.innerHTML = '';
+  for (const [k, u] of Object.entries(UPG)) {
+    const lv = save.up[k]; const maxed = lv >= u.max; const cost = maxed ? 0 : u.cost(lv);
+    const d = document.createElement('div'); d.className = 'it';
+    d.innerHTML = `<b>${u.ic} ${u.name}</b> <small>Cấp ${lv}/${u.max}${maxed ? '' : ' → ' + u.d(lv)}</small>`;
+    const b = document.createElement('button'); b.textContent = maxed ? 'Đã tối đa' : `Mua ${fmt(cost)}đ`; b.disabled = maxed || save.money < cost;
+    b.onclick = () => { save.money -= cost; save.up[k]++; sfx('coin', 0.6, 0.8); persist(); openShop(); };
+    d.appendChild(b); L.appendChild(d);
+  }
+  show('sShop');
+}
+
+// ================= HUD & GIAO DIỆN =================
+const $ = id => document.getElementById(id);
+const fmt = v => v.toLocaleString('vi-VN');
+function hud() {
+  if (!day) return;
+  $('hDay').textContent = save.day; $('hMoney').textContent = fmt(day.money); $('hGoal').textContent = fmt(day.goal);
+  $('hGoalBar').style.width = Math.min(100, day.money / day.goal * 100) + '%'; $('hRep').textContent = save.rep.toFixed(1);
+}
+function updateHint() {
+  let h;
+  if (!fryer.length && !cart.cupItems.length) h = '① Bấm vào <b>đĩa đồ sống</b> để thả xiên vào chảo dầu';
+  else if (!cart.cupItems.length) h = '② Khi thanh dưới xiên chuyển <b style="color:#4cc35a">xanh</b> là vàng giòn → bấm vào xiên để bỏ vào ly';
+  else h = '③ Rưới <b>tương</b> đúng ý khách → bấm vào <b>bong bóng của khách</b> để giao · Làm sai? Bấm <b>thùng rác</b>';
+  $('hint').innerHTML = h;
+}
+let toastT; function toast(m, ms = 2500) { const t = $('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), ms); }
+function show(id) { for (const s of document.querySelectorAll('.screen')) s.classList.toggle('on', s.id === id); document.body.classList.toggle('playing', state === 'play'); for (const l of labels) l.el.style.visibility = state === 'play' ? '' : 'hidden'; }
+function toMenu() {
+  state = 'menu'; for (const c of customers) { world.remove(c.p.root); c.el.remove(); } customers = [];
+  for (const f of fryer) { cart.g.remove(f.obj); removeClickable(f.obj); } fryer = []; clearCup(false);
+  renderMenu(); show('sMenu');
+}
+function renderMenu() {
+  const M = $('menuBtns'); M.innerHTML = '';
+  const mk = (t, cls, f) => { const b = document.createElement('button'); b.className = 'big ' + cls; b.textContent = t; b.onclick = f; M.appendChild(b); };
+  if (save && save.day > 1) { mk(`▶ Tiếp tục: Ngày ${save.day} · ${fmt(save.money)}đ`, 'alt', () => startDay()); M.appendChild(document.createElement('br')); }
+  mk('🔥 Mở hàng mới', '', () => { save = defSave(); persist(); startDay(); });
+  $('helpText').innerHTML = '<b>Cách chơi:</b> Bấm đĩa đồ sống → xiên vào chảo dầu. Khi thanh dưới xiên <b style="color:#6bd16b">xanh lá</b> là chín vàng giòn, bấm xiên để bỏ vào ly. Rưới tương theo yêu cầu, rồi bấm vào bong bóng của khách để giao. Đừng để khét (thanh nâu) hay để khách chờ lâu!';
+}
+$('bPause').onclick = () => { if (state !== 'play') return; state = 'pause'; $('pauseX').innerHTML = `Ngày <b>${save.day}</b> · Đã bán <b>${fmt(day.money)}đ</b> / ${fmt(day.goal)}đ`; show('sPause'); };
+$('bResume').onclick = () => { state = 'play'; show(null); last = performance.now(); };
+$('bQuit').onclick = () => { persist(); toMenu(); };
+$('bNextDay').onclick = () => startDay();
+addEventListener('keydown', e => { if ((e.code === 'KeyP' || e.code === 'Escape') && state === 'play') $('bPause').onclick(); });
+
+// ================= CAMERA & VÒNG LẶP =================
+function updateCamera(time) {
+  if (state === 'menu') {
+    const t = time * 0.1; camera.position.set(-3.2 + Math.sin(t) * 0.8, 1.7, 4.6 + Math.cos(t) * 0.4); camera.lookAt(0.2, 1.2, 0.3);
+    if (!narrow) { camera.position.set(-2.4 + Math.sin(t) * 0.5, 1.65, 3.9); camera.lookAt(0.9, 1.15, 0.6); }
+    return;
+  }
+  if (narrow) { camera.position.set(0, 2.75, -2.75); camera.lookAt(0, 0.9, 1.3); }
+  else { camera.position.set(0, 1.78, -1.6); camera.lookAt(0, 1.08, 1.9); }
+}
+let last = performance.now();
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.05, (now - last) / 1000); last = now; const time = now / 1000;
+  for (const c of cars) { const dir = c.lane ? 1 : -1; c.x += dir * c.sp * dt; if (c.x > 45) c.x = -45; if (c.x < -45) c.x = 45; c.o.position.set(c.x, 0.32, c.lane ? 9.0 : 12.6); c.o.rotation.y = dir > 0 ? Math.PI / 2 : -Math.PI / 2; }
+  cart.bulb.intensity = 6 + Math.sin(time * 13) * 0.25;
+  chef.mixer.update(dt);
+  if (state === 'play') {
+    day.t -= dt; if (day.t <= 0) { day.t = 0; endDay(); }
+    spawnT -= dt;
+    const busy = customers.filter(c => c.state !== 'leave').length;
+    if (window.__fast) spawnT = Math.min(spawnT, 0.3);
+    if (spawnT <= 0 && busy < 3) { spawnCustomer(); spawnT = Math.max(2.5, (8.5 - save.day * 0.5 - save.up.sign * 1.2) + Math.random() * 3); }
+    updateFryer(dt, time); updateCustomers(dt); updateWalkers(dt);
+    const m = Math.floor(day.t / 60), s = Math.floor(day.t % 60); $('hTime').textContent = m + ':' + String(s).padStart(2, '0');
+  } else if (state === 'dayend' || state === 'menu') { updateCustomers(dt); updateWalkers(dt); }
+  updateEffects(dt); fryFx(dt, time); updateLabels(); updateCamera(time);
+  renderer.render(scene, camera);
+}
+loadAll().then(() => {
+  buildStreet(); buildCart();
+  chef = new Person('chef', G.chef); chef.root.position.set(-1.25, 0, -0.55); chef.root.rotation.y = 0.35; world.add(chef.root); chef.play('idle_neutral_01');
+  for (const L of lampLights) L.intensity = 14;
+  $('loading').style.display = 'none'; renderMenu(); show('sMenu'); requestAnimationFrame(frame);
+  loadRestPeople();
+}).catch(e => { $('loading').textContent = 'Lỗi tải game: ' + e.message; console.error(e); });
+window.__g = { get state() { return state; }, get customers() { return customers; }, get fryer() { return fryer; }, cart, clickTray, clickFry, clickSauce, serve, startDay, get save() { return save; }, get day() { return day; }, matchCup, quality, toMenu, camera };
+</script>
+</body>
+</html>
