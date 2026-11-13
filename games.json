@@ -7,7 +7,10 @@
     "url": "games/ngon-den-rung-suong/",
     "cover": "games/ngon-den-rung-suong/cover.png",
     "controls": "WASD di chuyển · J / chuột trái đánh · Shift lướt · E nói chuyện",
-    "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)"
+    "credit": "Đồ họa: Ninja Adventure Asset Pack — Pixel-boy & AAA (CC0)",
+    "about": "Ngọn Đèn Rừng Sương là game nhập vai hành động phiêu lưu có cốt truyện, chơi miễn phí ngay trên trình duyệt. Bạn vào vai Lam, rời Làng Đom Đóm băng qua Rừng Thì Thầm và Phế Tích Nguyệt Thạch để tìm ba mảnh Tàn Lửa, lên cấp, rèn kiếm và đánh bại các trùm. Game có đồ họa pixel, ánh sáng đèn đuốc, sương mù và chơi được cả trên điện thoại.",
+    "keywords": "game nhập vai, game phiêu lưu, game hành động, game pixel, game RPG online",
+    "genre_en": "Action RPG"
   },
   {
     "slug": "linh-thu-ky",
@@ -17,7 +20,10 @@
     "url": "games/linh-thu-ky/",
     "cover": "games/linh-thu-ky/cover.png",
     "controls": "WASD di chuyển · E nói chuyện, chọn · Q đội hình · Esc quay lại",
-    "credit": "Hình ảnh: dự án Tuxemon (CC BY-SA 4.0 / CC BY / CC0) — xem games/linh-thu-ky/credits.html"
+    "credit": "Hình ảnh: dự án Tuxemon (CC BY-SA 4.0 / CC BY / CC0) — xem games/linh-thu-ky/credits.html",
+    "about": "Linh Thú Ký là game nhập vai đánh theo lượt kiểu thu phục quái vật, chơi miễn phí trên trình duyệt. Chọn linh thú khởi đầu, vào bãi cỏ rậm gặp linh thú hoang dã, làm yếu rồi thu phục chúng. Có 36 loài, 7 hệ khắc chế nhau, lên cấp, học chiêu, tiến hóa và thách đấu các cao thủ để trở thành Nhà Vô Địch Thung Lũng. Tiến độ được tự lưu.",
+    "keywords": "game đánh theo lượt, game thu phục quái vật, game giống pokemon, game nhập vai, game online miễn phí",
+    "genre_en": "Turn-based RPG"
   },
   {
     "slug": "sieu-tan-tinh",
@@ -27,6 +33,9 @@
     "url": "https://sieutantinh.pages.dev",
     "cover": "",
     "controls": "",
-    "credit": ""
+    "credit": "",
+    "about": "Siêu Tân Tinh là game trình duyệt đầu tay của Nam, chơi miễn phí ngay trên web, không cần cài đặt.",
+    "keywords": "game trình duyệt, game online miễn phí",
+    "genre_en": "Casual"
   }
 ]

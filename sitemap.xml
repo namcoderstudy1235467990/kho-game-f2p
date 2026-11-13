@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://khogamef2p.pages.dev/</loc></url>
-  <url><loc>https://khogamef2p.pages.dev/games/ngon-den-rung-suong/</loc></url>
-  <url><loc>https://khogamef2p.pages.dev/games/linh-thu-ky/</loc></url>
+  <url><loc>https://khogamef2p.pages.dev/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://khogamef2p.pages.dev/games/ngon-den-rung-suong/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://khogamef2p.pages.dev/games/linh-thu-ky/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://khogamef2p.pages.dev/gioi-thieu.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://khogamef2p.pages.dev/chinh-sach-bao-mat.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://khogamef2p.pages.dev/games/linh-thu-ky/credits.html</loc><lastmod>2026-11-13</lastmod></url>
 </urlset>

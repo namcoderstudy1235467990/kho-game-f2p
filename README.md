@@ -16,3 +16,7 @@ Cloudflare Pages: kết nối repo này, Build command để trống, Output dir
 ## Bản quyền hình ảnh
 - Ngọn Đèn Rừng Sương: Ninja Adventure Asset Pack — Pixel-boy & AAA, giấy phép CC0.
 - Linh Thú Ký: hình ảnh từ dự án Tuxemon và cộng đồng (CC BY-SA 4.0 / CC BY / CC0), danh sách tác giả tại `games/linh-thu-ky/credits.html`.
+
+## Tìm kiếm & quảng cáo
+- Sau khi thêm/sửa game trong `games.json`, chạy `python3 build.py` để tạo lại trang chủ, `sitemap.xml` và thẻ tìm kiếm (SEO) của từng game.
+- Quảng cáo: điền mã nhà xuất bản AdSense (`ca-pub-...`) vào biến `CLIENT` trong `ads.js` và thêm file `ads.txt`. Để trống thì không có quảng cáo.

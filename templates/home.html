@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kho Game F2P — Kho game online miễn phí, chơi ngay trên trình duyệt</title>
+<meta name="description" content="Kho Game F2P: kho game online miễn phí chơi ngay trên trình duyệt, không cần tải, không cần cài đặt. Game nhập vai, phiêu lưu, đánh theo lượt, chơi được trên điện thoại và máy tính.">
+<meta name="keywords" content="kho game, kho game f2p, kho game online, game online miễn phí, game trình duyệt, chơi game không cần tải, game nhập vai, game free to play">
+<link rel="canonical" href="{{SITE}}/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kho Game F2P">
+<meta property="og:title" content="Kho Game F2P — kho game online miễn phí">
+<meta property="og:description" content="Chơi game miễn phí ngay trên trình duyệt, không cần cài đặt.">
+<meta property="og:url" content="{{SITE}}/">
+<meta property="og:image" content="{{SITE}}/games/linh-thu-ky/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="games/linh-thu-ky/assets/i_ball.png">
+<script type="application/ld+json">{{LD}}</script>
+<script src="ads.js" async></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="templates/style.css">
+</head>
+<body>
+<div class="fly" id="fly"></div>
+<header>
+  <h1>Kho Game F2P</h1>
+  <p>Kho game online miễn phí — chơi ngay trên điện thoại hoặc máy tính, không cần tải, không cần cài đặt.</p>
+  <div class="rule"></div>
+</header>
+<main>
+  <h2 style="position:absolute;left:-9999px">Danh sách game</h2>
+  <div class="grid">
+{{CARDS}}
+  </div>
+  <div class="ad-slot" aria-label="Quảng cáo"></div>
+  <div class="info">
+    <section>
+      <h2>Kho Game F2P là gì?</h2>
+      <p><b>Kho Game F2P</b> là kho game online miễn phí (F2P — free to play) do Phạm Vũ Hoài Nam tự viết. Mọi game chạy trực tiếp trên trình duyệt: bấm “Chơi ngay” là vào chơi, không cần tải về, không cần tài khoản.</p>
+      <p>Hiện kho có {{COUNT}} game: {{NAMES}}. Game mới sẽ tiếp tục được thêm vào.</p>
+    </section>
+    <section>
+      <h2>Có những thể loại nào?</h2>
+      <ul>
+        <li><b>Nhập vai phiêu lưu</b> có cốt truyện, chiến đấu thời gian thực và đánh trùm.</li>
+        <li><b>Nhập vai đánh theo lượt</b>: thu phục linh thú, luyện cấp, tiến hóa, thách đấu.</li>
+        <li><b>Game trình duyệt nhẹ</b>, chơi nhanh vài phút.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Câu hỏi thường gặp</h2>
+      <p><b>Có mất tiền không?</b> Không. Mọi game đều miễn phí.</p>
+      <p><b>Chơi trên điện thoại được không?</b> Được. Game có cần điều khiển ảo và nút bấm trên màn hình cảm ứng.</p>
+      <p><b>Tiến độ có được lưu không?</b> Một số game tự lưu trên trình duyệt của bạn, ví dụ Linh Thú Ký.</p>
+    </section>
+  </div>
+</main>
+<footer>
+  <nav><a href="gioi-thieu.html">Giới thiệu</a>·<a href="chinh-sach-bao-mat.html">Chính sách bảo mật</a></nav>
+  {{CREDITS}}<br>Phần mềm &amp; thiết kế: Phạm Vũ Hoài Nam
+</footer>
+<script>
+(function(){var f=document.getElementById('fly');for(var i=0;i<22;i++){var d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.top=(30+Math.random()*70)+'%';d.style.animationDelay=(-Math.random()*9)+'s';d.style.animationDuration=(7+Math.random()*7)+'s';f.appendChild(d)}
+document.querySelectorAll('a.card').forEach(function(a){if(/^https?:/.test(a.getAttribute('href'))){a.target='_blank';a.rel='noopener'}})})();
+</script>
+</body>
+</html>
